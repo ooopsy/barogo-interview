@@ -55,7 +55,7 @@ public class OrderTest {
 	@Autowired
 	private UserRepository userRepository;
 	
-	private final String userId = "0c621199-e58c-4c80-91c2-ea0944edd9ba";
+	private String userId = "0c621199-e58c-4c80-91c2-ea0944edd9ba";
 	@BeforeAll
 	public void ensureUser() {
 		UserModel userModel= userRepository.findUserByUserName("oopsy");
@@ -64,6 +64,8 @@ public class OrderTest {
 			UserModel newUser = makeUser();
 			userRepository.save(newUser);
 		}
+		userModel= userRepository.findUserByUserName("oopsy");
+		this.userId = userModel.getId();
 	}
 	
 	@Test
