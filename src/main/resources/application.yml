@@ -1,0 +1,19 @@
+server:
+  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: oopsy
+    password: abc
+    url: jdbc:mysql://localhost:3307/kanban?serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf8
+  jpa: 
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
